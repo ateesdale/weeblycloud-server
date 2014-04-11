@@ -5,7 +5,11 @@ require_once 'modules/admin/models/ServerPlugin.php';
 */
 class PluginSkeletonserver extends ServerPlugin
 {
-    public $usesPackageName = true;
+    public $features = array(
+        'packageName' => true,
+        'testConnection' => true,
+        'showNameservers' => true
+    );
     /*****************************************************************/
     // function getVariables - required function
     /*****************************************************************/
