@@ -24,35 +24,35 @@ class PluginSkeletonserver extends ServerPlugin
 
 
         $variables = array (
-                   /*T*/"Name"/*/T*/ => array (
+                   lang("Name") => array (
                                         "type"=>"hidden",
                                         "description"=>"Used By CE to show plugin",
                                         "value"=>"Skeleton Plugin"
                                        ),
-                   /*T*/"Description"/*/T*/ => array (
+                   lang("Description") => array (
                                         "type"=>"hidden",
-                                        "description"=>/*T*/"Description viewable by admin in server settings"/*/T*/,
-                                        "value"=>/*T*/"Skeleton Plugin, to be used as a base for your custom server plugins."/*/T*/
+                                        "description"=>lang("Description viewable by admin in server settings"),
+                                        "value"=>lang("Skeleton Plugin, to be used as a base for your custom server plugins.")
                                        ),
-                   /*T*/"Username"/*/T*/ => array (
+                   lang("Username") => array (
                                         "type"=>"text",
-                                        "description"=>/*T*/"Username used to connect to server"/*/T*/,
+                                        "description"=>lang("Username used to connect to server"),
                                         "value"=>""
                                        ),
-                   /*T*/"Password"/*/T*/ => array (
+                   lang("Password") => array (
                                         "type"=>"password",
-                                        "description"=>/*T*/"Password used to connect to server"/*/T*/,
+                                        "description"=>lang("Password used to connect to server"),
                                         "value"=>"",
                                         "encryptable"=>true
                                        ),
-                   /*T*/"Actions"/*/T*/ => array (
+                   lang("Actions") => array (
                                         "type"=>"hidden",
-                                        "description"=>/*T*/"Current actions that are active for this plugin per server"/*/T*/,
+                                        "description"=>lang("Current actions that are active for this plugin per server"),
                                         "value"=>"Create,Delete,Suspend,UnSuspend"
                                        ),
-                   /*T*/'package_vars_values'/*/T*/ => array(
+                   lang('package_vars_values') => array(
                                         'type'        => 'hidden',
-                                        'description' => /*T*/'VM account parameters'/*/T*/,
+                                        'description' => lang('VM account parameters'),
                                         'value'       => array(
                                             // VIRTUAL MACHINE PROPERTIES
                                             // Template
@@ -60,8 +60,8 @@ class PluginSkeletonserver extends ServerPlugin
                                                 'type'        => 'dropdown',
                                                 'multiple'    => false,
                                                 'getValues'   => 'getTestValues',
-                                                'label'       => /*T*/'Template'/*/T*/,
-                                                'description' => /*T*/'A Template is a pre-configured OS image that you can build a Virtual Machine on.'/*/T*/,
+                                                'label'       => lang('Template'),
+                                                'description' => lang('A Template is a pre-configured OS image that you can build a Virtual Machine on.'),
                                                 'value'       => '',
                                             )
                                         ))
