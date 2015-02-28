@@ -27,28 +27,28 @@ class PluginWeeblycloudserver extends ServerPlugin
                    lang("Name") => array (
                                         "type"=>"hidden",
                                         "description"=>"Used By CE to show plugin",
-                                        "value"=>"Skeleton Plugin"
+                                        "value"=>"Weebly Cloud Plugin"
                                        ),
                    lang("Description") => array (
                                         "type"=>"hidden",
                                         "description"=>lang("Description viewable by admin in server settings"),
-                                        "value"=>lang("Skeleton Plugin, to be used as a base for your custom server plugins.")
+                                        "value"=>lang("Weebly Cloud Plugin, integration for Weebly for hosts.")
                                        ),
-                   lang("Username") => array (
+                   lang("APIKey") => array (
                                         "type"=>"text",
-                                        "description"=>lang("Username used to connect to server"),
+                                        "description"=>lang("Weebly Cloud API key"),
                                         "value"=>""
                                        ),
-                   lang("Password") => array (
+                   lang("APISecret") => array (
                                         "type"=>"password",
-                                        "description"=>lang("Password used to connect to server"),
+                                        "description"=>lang("Weebly Cloud API Secret"),
                                         "value"=>"",
                                         "encryptable"=>true
                                        ),
                    lang("Actions") => array (
                                         "type"=>"hidden",
                                         "description"=>lang("Current actions that are active for this plugin per server"),
-                                        "value"=>"Create,Delete,Suspend,UnSuspend"
+                                        "value"=>"Create,Upgrade,Delete,Suspend,UnSuspend"
                                        ),
                    lang('package_vars_values') => array(
                                         'type'        => 'hidden',
@@ -83,6 +83,9 @@ class PluginWeeblycloudserver extends ServerPlugin
 
     function update($args){
     }
+    
+    function upgrade($args){
+    }
 
     function delete($args){
     }
@@ -96,6 +99,7 @@ class PluginWeeblycloudserver extends ServerPlugin
     function getAvailableActions($userPackage)
     {
         $actions[] = 'Create';
+        $actions[] = 'Upgrade';
         $actions[] = 'Delete';
         $actions[] = 'UnSuspend';
         $actions[] = 'Suspend';
@@ -106,6 +110,13 @@ class PluginWeeblycloudserver extends ServerPlugin
     {
         $userPackage = new UserPackage($args['userPackageId']);
         $this->create($this->buildParams($userPackage));
+        return $userPackage->getCustomField("Domain Name") .  ' has been created.';
+    }
+    
+    function doUpgrade($args)
+    {
+        $userPackage = new UserPackage($args['userPackageId']);
+        $this->upgrade($this->buildParams($userPackage));
         return $userPackage->getCustomField("Domain Name") .  ' has been created.';
     }
 
