@@ -49,22 +49,7 @@ class PluginWeeblycloudserver extends ServerPlugin
                                         "type"=>"hidden",
                                         "description"=>lang("Current actions that are active for this plugin per server"),
                                         "value"=>"Create,Upgrade,Delete,Suspend,UnSuspend"
-                                       ),
-                   lang('package_vars_values') => array(
-                                        'type'        => 'hidden',
-                                        'description' => lang('VM account parameters'),
-                                        'value'       => array(
-                                            // VIRTUAL MACHINE PROPERTIES
-                                            // Template
-                                            'template' => array(
-                                                'type'        => 'dropdown',
-                                                'multiple'    => false,
-                                                'getValues'   => 'getTestValues',
-                                                'label'       => lang('Template'),
-                                                'description' => lang('A Template is a pre-configured OS image that you can build a Virtual Machine on.'),
-                                                'value'       => '',
-                                            )
-                                        ))
+                                       )
         );
         return $variables;
     }
