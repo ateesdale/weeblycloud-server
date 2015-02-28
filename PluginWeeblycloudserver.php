@@ -3,12 +3,12 @@ require_once 'modules/admin/models/ServerPlugin.php';
 /**
 * @package Plugins
 */
-class PluginSkeletonserver extends ServerPlugin
+class PluginWeeblycloudserver extends ServerPlugin
 {
     public $features = array(
         'packageName' => true,
         'testConnection' => true,
-        'showNameservers' => true
+        'showNameservers' => false
     );
     /*****************************************************************/
     // function getVariables - required function
